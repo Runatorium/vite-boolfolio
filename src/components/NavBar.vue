@@ -3,6 +3,29 @@ import { router } from '../router.js';
 
 export default{
     name: "NavBar",
+
+    data(){
+        return{
+            menuItems:[
+                {
+                    label: 'Home',
+                    routeName: 'Home'
+                },
+                {
+                    label: 'Contact',
+                    routeName: 'Contact'
+                },
+                {
+                    label: 'About',
+                    routeName: 'About'
+                },
+                {
+                    label: 'Projects',
+                    routeName: 'Project'
+                },
+            ]
+        }
+    }
 }
 </script>
 
@@ -16,17 +39,8 @@ export default{
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item">
-          <router-link :to="{name:'Home'}" class="nav-link">Home</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link :to="{name:'Contact'}" class="nav-link">Contact</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link :to="{name:'Project'}" class="nav-link">Projects</router-link>
-        </li>
-        <li class="nav-item">
-          <router-link :to="{name:'About'}" class="nav-link">Home</router-link>
+        <li class="nav-item" v-for="item in menuItems">
+          <router-link :to="{name:item.routeName}" class="nav-link">{{ item.label }}</router-link>
         </li>
       </ul>
     </div>
