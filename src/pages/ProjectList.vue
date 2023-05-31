@@ -1,21 +1,22 @@
 <script>
 import axios from 'axios';
-import ProjectCard from './ProjectCard.vue';
+import ProjectCard from '../components/ProjectCard.vue';
 
 
 export default{
+
     components: {
         ProjectCard,
     },
-    name: "AppMain",
+    name: "ProjectList",
     data() {
         return {
             postsData: [],
         };
     },
     methods: {
-         getPosts() {
-            axios.get("http://localhost:8000/api/posts")
+    async getPosts() {
+        await axios.get("http://localhost:8000/api/posts")
                 .then(response => {
                 this.postsData = response.data.results;
             });

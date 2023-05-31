@@ -1,12 +1,12 @@
 <script>
-import AppMain from './AppMain.vue';
+import ProjectList from '../pages/ProjectList.vue';
 
 
  export default{
     name: "ProjectCard",
 
     props: {
-    singleCard: Object
+      singleCard: Object
     }
     
     
