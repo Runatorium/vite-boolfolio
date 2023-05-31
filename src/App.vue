@@ -1,15 +1,14 @@
 <script>
 
-import ProjectCard from './components/ProjectCard.vue';
 import ProjectList from './pages/ProjectList.vue';
 
 export default{
-    components: { ProjectCard, ProjectList }
+    components: { ProjectList }
 }
 </script>
 
 <template>
-  <ProjectList></ProjectList>
+  <RouterView></RouterView>
 </template>
 
 <style lang="scss">
